@@ -1,0 +1,44 @@
+{% extends "catalog/index.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+    <section id="danh-sach-benh">
+        <h2>Các Loại Bệnh Phổ Biến</h2>
+        <ul>
+            <li>
+                <h3>Bệnh A</h3>
+                <p>Triệu chứng: ...</p>
+                <p>Cách Chữa Trị: ...</p>
+            </li>
+            <li>
+                <h3>Bệnh B</h3>
+                <p>Triệu chứng: ...</p>
+                <p>Cách Chữa Trị: ...</p>
+            </li>
+            <!-- Thêm các loại bệnh khác vào đây -->
+        </ul>
+    </section>
+
+    <section id="hinh-anh-bieu-do">
+        <h2>Hình Ảnh và Biểu Đồ</h2>
+        <img src="benh-a.jpg" alt="Hình ảnh Bệnh A">
+        <img src="benh-b.jpg" alt="Hình ảnh Bệnh B">
+        <!-- Thêm hình ảnh và biểu đồ khác vào đây -->
+    </section>
+
+    <section id="cau-chuyen-thanh-cong">
+        <h2>Câu Chuyện Thành Công</h2>
+        <p>Câu chuyện về một bệnh nhân đã được chữa trị thành công tại bệnh viện của chúng tôi.</p>
+    </section>
+
+    <section id="lien-he-ho-tro">
+        <h2>Liên Hệ Và Hỗ Trợ</h2>
+        <p>Để biết thêm thông tin hoặc đặt lịch hẹn, xin vui lòng liên hệ:</p>
+        <address>
+            Địa chỉ: 123 Đường ABC, Thành phố XYZ<br>
+            Số điện thoại: (123) 456-7890<br>
+            Email: info@benhvien.com
+        </address>
+    </section>
+{% endblock %}

@@ -1,0 +1,113 @@
+{% extends "card/card.html" %}
+{% load i18n %}
+{% load static %}
+{% block content %}
+<div class=" d-lg-block container-fluid container-fluid-max-xl mb-lg-0 mt-lg-0 pb-lg-0 pl-lg-0 pr-lg-0 pt-lg-0 text-lg-left" style="border-style: solid; border-width: 0px;">
+    <div class=" d-lg-block mb-lg-0 ml-lg-0 mr-lg-0 mt-lg-0 pb-lg-0 pl-lg-0 pr-lg-0 pt-lg-0 text-lg-left" style="border-style: solid; border-width: 0px;overflow: hidden;">
+     <div class="row align-items-lg-start align-items-sm-start align-items-start align-items-md-start flex-lg-row flex-sm-row flex-row flex-md-row">
+      <div class="col col-lg-12 col-sm-12 col-12 col-md-12">
+       <div class=" d-lg-block mb-lg-0 ml-lg-0 mr-lg-0 mt-lg-0 pb-lg-0 pl-lg-0 pr-lg-0 pt-lg-0 text-lg-left" style="border-style: solid; border-width: 0px;">
+        <div id="fragment-0-lmfb"> 
+         <div class="portlet-boundary portlet-boundary_NewListDocter_NewListDocterPortlet_  portlet-static portlet-static-end portlet-decorate  " id="p_p_id_NewListDocter_NewListDocterPortlet_INSTANCE_lmfb_"> 
+          <span id="p_NewListDocter_NewListDocterPortlet_INSTANCE_lmfb"></span> 
+          <section class="portlet" id="portlet_NewListDocter_NewListDocterPortlet_INSTANCE_lmfb"> 
+           <div class="portlet-content"> 
+            <div class="autofit-float autofit-row portlet-header hide"> 
+             <div class="autofit-col autofit-col-expand"> 
+              <h2 class="portlet-title-text">NewListDocter</h2> 
+             </div> 
+            </div> 
+            <div class=" portlet-content-container"> 
+             <div class="portlet-body"> 
+              <fieldset class="fieldset ">
+               <legend class="fieldset-legend"><span class="legend"></span></legend>
+               <div class=""> 
+                <div class="card-horizontal main-content-card"> 
+                 <div class="card-body"> 
+                  <div class="row " id=""> 
+                   <div class="col-md-12  " id=""> 
+                    <form action="https://bachmai.gov.vn/doi-ngu-chuyen-gia?p_p_id=NewListDocter_NewListDocterPortlet_INSTANCE_lmfb&amp;p_p_lifecycle=0&amp;p_p_state=normal&amp;p_p_mode=view&amp;_NewListDocter_NewListDocterPortlet_INSTANCE_lmfb_cur=1&amp;_NewListDocter_NewListDocterPortlet_INSTANCE_lmfb_delta=10" class="form  " data-fm-namespace="_NewListDocter_NewListDocterPortlet_INSTANCE_lmfb_" id="_NewListDocter_NewListDocterPortlet_INSTANCE_lmfb_fm" method="POST" name="_NewListDocter_NewListDocterPortlet_INSTANCE_lmfb_fm"> 
+                     <input class="field form-control" id="_NewListDocter_NewListDocterPortlet_INSTANCE_lmfb_formDate" name="_NewListDocter_NewListDocterPortlet_INSTANCE_lmfb_formDate" type="hidden" value="1696477131881"> 
+                     <div class="form-group row"> 
+                      <div class="col-sm-7">  
+                      </div> 
+                      <div class="col-sm-3"> 
+                       <div class="form-group input-text-wrapper"> 
+                        <input class="field inputform form-control" id="_NewListDocter_NewListDocterPortlet_INSTANCE_lmfb_search" name="_NewListDocter_NewListDocterPortlet_INSTANCE_lmfb_searchKey" placeholder="Tìm kiếm theo chuyên môn" title="search-key" type="text" value=""> 
+                       </div> 
+                      </div> 
+                      <div class="col-sm-2"> 
+                       <button class="btn form-s btn-primary btn-primary" id="_NewListDocter_NewListDocterPortlet_INSTANCE_lmfb_tvxc" type="submit"> <i class="icon-search"></i> <span class="lfr-btn-label">Tìm kiếm</span> </button> 
+                      </div> 
+                     </div> 
+                    </form> 
+                    <div class="row " id=""> 
+                     <div class="col-md-12  " id=""> 
+                      <div class="hide container-view" id="_NewListDocter_NewListDocterPortlet_INSTANCE_lmfb_doctersSearchContainerEmptyResultsMessage"> 
+                       <div class="sheet taglib-empty-result-message"> 
+                        <div class="taglib-empty-result-message-header"></div> 
+                        <div class="sheet-text text-center">
+                        </div> 
+                       </div> 
+                      </div> 
+                      <div class="  container-view lfr-search-container-wrapper "> 
+                       <div id="_NewListDocter_NewListDocterPortlet_INSTANCE_lmfb_doctersSearchContainer" class="yui3-widget component searchcontainer searchcontainer-focused"><div id="_NewListDocter_NewListDocterPortlet_INSTANCE_lmfb_doctersSearchContainerSearchContainer" class="searchcontainer-content"> 
+                        <div class="table-responsive"> 
+                         <table class="show-quick-actions-on-hover table table-autofit table-heading-nowrap table-list" data-searchcontainerid="_NewListDocter_NewListDocterPortlet_INSTANCE_lmfb_doctersSearchContainer"> 
+                          <tbody> 
+                            {% for i in doctor %}
+                                <tr class="   " data-qa-id="row"> 
+                                    <td class="w5 lfr-entry-action-column" colspan="1"><img src="{{ i.image.url }}" height=150%, width=200%></td> 
+                                    <td class="w10 lfr-entry-action-column" colspan="1"> 
+                                    <div> 
+                                    <a href="#"><h3 style="font-size: 17px; font-weight: bold;">{{i.name}}</h3></a> 
+                                    <p></p>
+                                    <p>Số lượng bênh nhân: {{i.patient_count}}</p>
+                                    <p></p> 
+                                    </div> 
+                                    <button class="btn-detail"> 
+                                        <a href="/catalog/doctorinfo/{{i.id}}">Xem chi tiết</a> 
+                                    </button> 
+                                    <button class="btn-detail"> 
+                                        <a href="/catalog/doctorimage/{{i.id}}">Chân dung bác sĩ</a> 
+                                    </button> 
+                                    <br>
+                                    <br>
+                                    <button class="btn-detail"> 
+                                        <a href="/catalog/patient_form/" class="btn">Đặt Lịch Hẹn Ngay</a>
+                                    </button> </td> 
+                                </tr> 
+                           {% endfor %}
+                           <tr class="d-none " data-qa-id="row"> 
+                            <td></td> 
+                            <td></td> 
+                           </tr> 
+                          </tbody> 
+                         </table> 
+                        </div> 
+                        </div> 
+                       </div></div> 
+                      </div> 
+                      <input id="_NewListDocter_NewListDocterPortlet_INSTANCE_lmfb_doctersSearchContainerPrimaryKeys" name="_NewListDocter_NewListDocterPortlet_INSTANCE_lmfb_doctersSearchContainerPrimaryKeys" type="hidden" value="63,64,65,1,109,66"> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div>
+                </div> 
+               </div>
+              </fieldset> 
+             </div> 
+            </div> 
+           </div> 
+          </section> 
+         </div> 
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   {% endblock %}
+   {% block underbar %}
+    {% endblock %}

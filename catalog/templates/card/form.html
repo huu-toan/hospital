@@ -1,0 +1,45 @@
+{% csrf_token %}
+<div class="form-group">
+    <label for="{{ form.name.id_for_label }}">Họ và tên</label>{{ form.name }}
+    <input type="text" class="form-control" id="name" placeholder="Họ và tên">
+</div>
+<div class="form-group">
+    <label for="form.age.id_for_label">Tuổi tác</label>{{ form.age}}
+    <input type="text" class="form-control" id="age" placeholder="Tuổi tác">
+</div>
+<div class="form-group">
+    <label for="form.phone_number.id_for_label">Số điện thoại</label>{{ form.phone_number}}
+    <input type="text" class="form-control" id="phone_number" placeholder="Số điện thoại">
+</div>
+<div class="form-group">
+    <label for="form.citizen_id.id_for_label">CCCD/CMTND</label>{{form.citizen_id}}
+    <input type="text" class="form-control" id="citizen_id" placeholder="CCCD/CMTND">
+</div>
+<div class="form-group">
+    <label for="form.address.id_for_label">Địa chỉ</label>
+    <select class="form-control" id="address">
+        <option value="ha-noi" selected="selected">Hà Nội</option>
+        <option value="da-nang">Đà Nẵng</option>
+        <option value="nha-trang">Nha Trang</option>
+        <option value="hai-phong">Hải Phòng</option>
+        <option value="ha-long">Hạ Long</option>
+        <option value="phu-quoc">Phú Quốc</option>
+        <option value="ho-chi-minh">Hồ Chí Minh</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="{{ form.medical_record.id_for_label }}">Hồ sơ y tế</label>{{ form.medical_record }}
+    <input type="file" class="form-control" id="medical_record" name="medical_record">
+</div>
+<div class="form-group">
+    <label for="{{ form.status.id_for_label }}">Tình trạng cuộc hẹn</label>
+    <select class="form-control" id="status" name="status">
+        <option value="true">Đã hẹn</option>
+        <option value="false">Chưa hẹn</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="needs">Nhu cầu khám bệnh</label>
+    <textarea class="form-control" id="needs" rows="3" placeholder="Nhu cầu khám bệnh (không bắt buộc)"></textarea>
+</div>
+<button type="submit" class="btn btn-primary">Đặt lịch</button>

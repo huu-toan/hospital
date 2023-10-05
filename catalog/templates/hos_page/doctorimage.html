@@ -1,0 +1,28 @@
+{% extends "catalog/index.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 text-center">
+            <img src="{{ doctor.image.url }}" alt="{{ doctor.name }}" class="img-fluid rounded-circle" style="width: 200px; height: 200px; border: 4px solid #007BFF;">
+        </div>
+        <div class="col-md-8">
+            <h1 class="text-primary">{{ doctor.name }}</h1>
+            <p><i class="fas fa-birthday-cake"></i> <strong>{{ _("Age") }}:</strong> {{ doctor.age }}</p>
+            <p><i class="fas fa-stethoscope"></i> <strong>{{ _("Specialty") }}:</strong> {{ doctor.specialty }}</p>
+            <p><i class="fas fa-star"></i> <strong>{{ _("Strengths") }}:</strong> {{ doctor.strengths }}</p>
+            <p><i class="fas fa-users"></i> <strong>{{ _("Number of Patients") }}:</strong> {{ doctor.patient_count }}</p>
+            
+            <hr>
+            
+            <div class="text-left">
+                <p><i class="fas fa-hospital"></i> <strong>{{ _("Hospital") }}:</strong> {{ doctor.hospital_name }}</p>
+                <p><i class="fas fa-map-marker-alt"></i> <strong>{{ _("Location") }}:</strong> {{ doctor.hospital_location }}</p>
+                <p><i class="fas fa-phone"></i> <strong>{{ _("Contact") }}:</strong> {{ doctor.hospital_contact }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

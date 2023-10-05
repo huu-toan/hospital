@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+{% load i18n %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% trans "Hospital" %}</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'catalog/css/styles.css' %}">
+</head>
+<body>
+  {% block navbar %}
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #e3f2fd;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="\catalog\">Trang chủ</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="\catalog\introduce">Giới thiệu</a>
+              <a class="nav-link" href="\catalog\pro">Đội ngũ chuyên gia</a>
+              <a class="nav-link" href="\catalog\patient_form">Đặt lịch khám</a>
+              <a class="nav-link" href="\catalog\for_patient">Dành cho bệnh nhân</a>
+            </div>
+          </div>
+          <form class="d-flex" method="GET" action="{% url "search" %}">
+            <input name="query" class="form-control me-2" type="search" placeholder="Tìm kiếm" aria-label="Tìm kiếm">
+            <button class="btn btn-blue-sea" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    {% endblock %}
+    
+    <div class="container mt-4">
+        {% block content %}
+        {% endblock %}
+    </div>
+    {% block underbar %}
+    <section id="nut-goi-hanh-dong">
+        <a href="/catalog/patient_form/" class="btn">Đặt Lịch Hẹn Ngay</a>
+    </section>
+    {% endblock %}
+    <footer>
+        <p>&copy; 2023 Bệnh Viện ABC. Bản quyền được bảo lưu.</p>
+    </footer>
+    <script src="{% static 'bootstrap/js/jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

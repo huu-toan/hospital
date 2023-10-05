@@ -1,0 +1,27 @@
+{% extends "card/card.html" %}
+{% load i18n %}
+{% load static %}
+{% block content %}
+<div style="background-color: #007BFF; padding: 20px;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">Để lại nhu cầu khám</div>
+                    <div class="card-body">
+                        <form method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button type="submit" class="btn btn-primary">Đặt lịch</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block underbar%}
+<section>
+</section>
+{% endblock %}

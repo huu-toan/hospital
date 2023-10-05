@@ -1,0 +1,35 @@
+{% extends "catalog/index.html" %}
+{% load i18n %}
+{% load static %}
+{% block content %}
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active left">
+        <img src="{%static '/catalog/image/homecard1.jpg'%} " class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{%static '/catalog/image/homecard2.jpg'%}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{%static '/catalog/image/homecard3.jpg'%}" class="d-block w-100" alt="...">
+    </div>
+  </div>
+</div>
+
+<div style="background-color: #007BFF; padding: 20px;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">Để lại nhu cầu khám</div>
+                    <div class="card-body">
+                        <form>
+                            {% include 'card/form.html'%}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

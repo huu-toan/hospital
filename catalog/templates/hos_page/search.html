@@ -1,0 +1,55 @@
+{% extends "catalog/index.html" %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+<div class="container">
+    <h1> Your searching result here: </h1>
+    <div class="container-view lfr-search-container-wrapper">
+        <div id="_NewListDocter_NewListDocterPortlet_INSTANCE_lmfb_doctersSearchContainer"
+            class="yui3-widget component searchcontainer searchcontainer-focused">
+            <div id="_NewListDocter_NewListDocterPortlet_INSTANCE_lmfb_doctersSearchContainerSearchContainer"
+                class="searchcontainer-content">
+                <div class="table-responsive">
+                    <table
+                        class="show-quick-actions-on-hover table table-autofit table-heading-nowrap table-list"
+                        data-searchcontainerid="_NewListDocter_NewListDocterPortlet_INSTANCE_lmfb_doctersSearchContainer">
+                        <tbody>
+                            {% for i in doctors %}
+                            <tr class="   " data-qa-id="row">
+                                <td class="w5 lfr-entry-action-column" colspan="1"><img src="{{ i.image.url }}"
+                                        height=150%, width=200%></td>
+                                <td class="w10 lfr-entry-action-column" colspan="1">
+                                    <div>
+                                        <a href="#"><h3 style="font-size: 17px; font-weight: bold;">{{i.name}}</h3></a>
+                                        <p></p>
+                                        <p>Số lượng bênh nhân: {{i.patient_count}}</p>
+                                        <p></p>
+                                    </div>
+                                    <button class="btn-detail">
+                                        <a href="/catalog/doctorinfo/{{i.id}}">Xem chi tiết</a>
+                                    </button>
+                                    <button class="btn-detail">
+                                        <a href="/catalog/doctorimage/{{i.id}}">Chân dung bác sĩ</a>
+                                    </button>
+                                    <br>
+                                    <br>
+                                    <button class="btn-detail">
+                                        <a href="/catalog/patient_form/" class="btn">Đặt Lịch Hẹn Ngay</a>
+                                    </button>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            <tr class="d-none " data-qa-id="row">
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block underbar %}
+{% endblock %}
